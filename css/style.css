@@ -1,0 +1,38 @@
+.price-data-section {
+  width: 120rem;
+}
+
+.table-container {
+  width: 60%;
+  background-color: aquamarine;
+  margin: 4.8rem auto;
+  border-radius: 9px 9px 0px 0px;
+  border-bottom: 3px solid #555;
+}
+
+.crypto-table {
+  width: 100%;
+  color: #212529;
+}
+
+.coin-table thead th {
+  color: #4a4a4a;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding-left: 5px;
+  padding-right: 5px;
+  text-align: left;
+  vertical-align: middle;
+  white-space: nowrap;
+  overflow: hidden;
+  line-height: 0;
+  padding-top: 20px;
+  border-bottom: 1px solid aquamarine;
+  border-top: 1px solid aquamarine;
+  height: 45px;
+}
+
+.crypto-table th {
+  padding: 0.75rem;
+  font-size: 0.8rem;
+}
