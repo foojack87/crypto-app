@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/css/style.css" />
     <script type="module" src="/js/controller.js"></script>
 
-    <title>Document</title>
+    <title>crypto app</title>
   </head>
   <body>
     <section class="price-data-section">
@@ -20,7 +20,7 @@
               <th class="coin-table">
                   #</th>
                   <th class="coin-name">Coin</th>
-                  <th class="price">Price</th>
+                  <th class="price third-col">Price</th>
                   <th class="price-change-hour">1h</th>
                   <th class="price-change-24hr">24h</th>
                   <th class="price-change-7d">7d</th>
@@ -32,8 +32,42 @@
             </tr>
           </thead>
           <tbody class="coin-data">
-            <td class="first-col coin-number center-text">1</td>
-            <td class="second-col coin-name center-text">Bitcoin<img class="coin-logos"src="imgs/bitcoin_PNG48.webp"></td>
+            <tr class="border-top">
+              <td class="first-col coin-number center-text ">1</td>
+              <td class="second-col coin-name center-text"><img class="coin-logos"src="imgs/bitcoin_PNG48.webp"><span class="font-bold">Bitcoin</span><span class="coin-symbol">BTC</span></td>
+              <td class="coin-price center-text">$17,000.02</td>
+              <td class="1hr-change center-text"><span class="text-negative">
+              -0.3%</span></td>
+              <td class="24hr-change center-text"><span class="text-positive">0.69%</span></td>
+              <td class="7d-change center-text"><span class="text-positive">4.2%</span></td>
+              <td class="24hr-vol center-text">$28,141,074,945</td>
+              <td class="mkt-cap center-text">$329,240,175,973</td>
+              <td class="7d-sparkline center-text sparkline-img"><img width="135" height="50" src="imgs/sparkline-placeholder.PNG"></td>
+            </tr>
+
+            <tr class="border-top">
+              <td class="first-col coin-number center-text ">1</td>
+              <td class="second-col coin-name center-text"><img class="coin-logos"src="imgs/bitcoin_PNG48.webp"><span class="font-bold">Ethereum</span><span class="coin-symbol">ETH</span></td>
+              <td class="coin-price center-text">$1,273.64</td>
+              <td class="1hr-change center-text"><span class="text-negative">-0.0%</span></td>
+              <td class="24hr-change center-text"><span class="text-negative">-1.1%</span></td>
+              <td class="7d-change center-text"><span class="text-positive">5.7%</span></td>
+              <td class="24hr-vol center-text">$6,017,431,262	</td>
+              <td class="mkt-cap center-text">$153,507,636,656</td>
+              <td class="7d-sparkline center-text sparkline-img"><img width="135" height="50" src="imgs/sparkline-placeholder.PNG"></td>
+            </tr>
+
+            <tr class="border-top">
+              <td class="first-col coin-number center-text ">1</td>
+              <td class="second-col coin-name center-text"><img class="coin-logos"src="imgs/bitcoin_PNG48.webp"><span class="font-bold">Tether</span><span class="coin-symbol">USDT</span></td>
+              <td class="coin-price center-text">$1,273.64</td>
+              <td class="1hr-change center-text"><span class="text-negative">-0.0%</span></td>
+              <td class="24hr-change center-text"><span class="text-negative">-1.1%</span></td>
+              <td class="7d-change center-text"><span class="text-positive">5.7%</span></td>
+              <td class="24hr-vol center-text">$6,017,431,262	</td>
+              <td class="mkt-cap center-text">$153,507,636,656</td>
+              <td class="7d-sparkline center-text sparkline-img"><img width="135" height="50" src="imgs/sparkline-placeholder.PNG"></td>
+            </tr>
           </tbody>
         </table>
       </div>

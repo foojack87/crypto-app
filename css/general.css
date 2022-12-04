@@ -26,6 +26,33 @@ body {
 
 .second-col {
   display: flex;
+  /* justify-content: center; */
   align-items: center;
-  justify-content: center;
+  margin-top: 0.4rem;
+  margin-left: 3rem;
+}
+
+.third-col {
+  text-align: end;
+  padding-right: 1.5rem !important;
+}
+
+.border-top {
+  border-top: 1px solid rgba(119, 119, 119, 0.425);
+}
+
+table {
+  border-collapse: collapse;
+}
+
+.text-negative {
+  color: #dc3545;
+}
+
+.text-positive {
+  color: #4eaf0a;
+}
+
+.font-bold {
+  font-weight: 600;
 }
