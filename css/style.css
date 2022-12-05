@@ -48,3 +48,26 @@
   padding-right: 1rem;
   text-align: end;
 }
+
+.spinner {
+  margin: 0 auto;
+}
+
+.spinner--icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 6rem;
+  width: 6rem;
+  color: #4a4a4a;
+  animation: rotate 2s infinite linear;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

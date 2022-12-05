@@ -21,15 +21,14 @@ body {
 }
 
 .coin-logos {
-  width: 2.4rem;
+  width: 1.4rem;
 }
 
 .second-col {
   display: flex;
-  /* justify-content: center; */
   align-items: center;
-  margin-top: 0.4rem;
-  margin-left: 3rem;
+  margin-top: 0.7rem;
+  justify-content: space-between;
 }
 
 .third-col {
