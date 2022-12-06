@@ -29,3 +29,15 @@ export const AJAX = async function (api, uploadData = undefined) {
     throw err;
   }
 };
+
+export const formatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+  maximumFractionDigits: 0,
+  minimumFractionDigits: 0,
+});
+
+export const formatterPrice = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+});
