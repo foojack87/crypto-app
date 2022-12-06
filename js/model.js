@@ -46,40 +46,11 @@ export const loadCoinData = async function (id) {
 };
 
 export const loadTop10CoinData = async function () {
-  const res = await fetch(`https://api.coingecko.com/api/v3/coins`);
+  const res =
+    await fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&price_change_percentage=1h%2C24h%2C7d
+  `);
 
-  const data = await Promise.all([
-    fetch(
-      `https://api.coingecko.com/api/v3/coins/bitcoin?tickers=false&market_data=true&community_data=false&developer_data=false&sparkline=true`
-    ).then(res => res.json()),
-    fetch(
-      `https://api.coingecko.com/api/v3/coins/ethereum?tickers=false&market_data=true&community_data=false&developer_data=false&sparkline=true`
-    ).then(res => res.json()),
-    fetch(
-      `https://api.coingecko.com/api/v3/coins/tether?tickers=false&market_data=true&community_data=false&developer_data=false&sparkline=true`
-    ).then(res => res.json()),
-    fetch(
-      `https://api.coingecko.com/api/v3/coins/binancecoin?tickers=false&market_data=true&community_data=false&developer_data=false&sparkline=true`
-    ).then(res => res.json()),
-    fetch(
-      `https://api.coingecko.com/api/v3/coins/usd-coin?tickers=false&market_data=true&community_data=false&developer_data=false&sparkline=true`
-    ).then(res => res.json()),
-    fetch(
-      `https://api.coingecko.com/api/v3/coins/binance-usd?tickers=false&market_data=true&community_data=false&developer_data=false&sparkline=true`
-    ).then(res => res.json()),
-    fetch(
-      `https://api.coingecko.com/api/v3/coins/ripple?tickers=false&market_data=true&community_data=false&developer_data=false&sparkline=true`
-    ).then(res => res.json()),
-    fetch(
-      `https://api.coingecko.com/api/v3/coins/dogecoin?tickers=false&market_data=true&community_data=false&developer_data=false&sparkline=true`
-    ).then(res => res.json()),
-    fetch(
-      `https://api.coingecko.com/api/v3/coins/cardano?tickers=false&market_data=true&community_data=false&developer_data=false&sparkline=true`
-    ).then(res => res.json()),
-    fetch(
-      `https://api.coingecko.com/api/v3/coins/matic-network?tickers=false&market_data=true&community_data=false&developer_data=false&sparkline=true`
-    ).then(res => res.json()),
-  ]);
+  const data = await await res.json();
 
   console.log(data);
 
@@ -92,17 +63,13 @@ export const loadTop10CoinData = async function () {
       id: data[0].id,
       symbol: data[0].symbol,
       name: data[0].name,
-      logo: data[0].image.thumb,
-      currUsdPrice: data[0].market_data.current_price.usd,
-      mktCap: data[0].market_data.market_cap.usd,
-      priceChangePercent1h:
-        data[0].market_data.price_change_percentage_1h_in_currency.usd,
-      priceChangePercent24h:
-        data[0].market_data.price_change_percentage_24h_in_currency.usd,
-      priceChangePercent7d:
-        data[0].market_data.price_change_percentage_7d_in_currency.usd,
-      totalVolume24hr: data[0].market_data.total_volume.usd,
-      sparkline: data[0].market_data.sparkline_7d,
+      logo: data[0].image,
+      currUsdPrice: data[0].current_price,
+      mktCap: data[0].market_cap,
+      priceChangePercent1h: data[0].price_change_percentage_1h_in_currency,
+      priceChangePercent24h: data[0].price_change_percentage_24h_in_currency,
+      priceChangePercent7d: data[0].price_change_percentage_7d_in_currency,
+      totalVolume24hr: data[0].total_volume,
       mktCapRank: data[0].market_cap_rank,
     };
 
@@ -112,17 +79,13 @@ export const loadTop10CoinData = async function () {
       id: data[1].id,
       symbol: data[1].symbol,
       name: data[1].name,
-      logo: data[1].image.thumb,
-      currUsdPrice: data[1].market_data.current_price.usd,
-      mktCap: data[1].market_data.market_cap.usd,
-      priceChangePercent1h:
-        data[1].market_data.price_change_percentage_1h_in_currency.usd,
-      priceChangePercent24h:
-        data[1].market_data.price_change_percentage_24h_in_currency.usd,
-      priceChangePercent7d:
-        data[1].market_data.price_change_percentage_7d_in_currency.usd,
-      totalVolume24hr: data[1].market_data.total_volume.usd,
-      sparkline: data[1].market_data.sparkline_7d,
+      logo: data[1].image,
+      currUsdPrice: data[1].current_price,
+      mktCap: data[1].market_cap,
+      priceChangePercent1h: data[1].price_change_percentage_1h_in_currency,
+      priceChangePercent24h: data[1].price_change_percentage_24h_in_currency,
+      priceChangePercent7d: data[1].price_change_percentage_7d_in_currency,
+      totalVolume24hr: data[1].total_volume,
       mktCapRank: data[1].market_cap_rank,
     };
 
@@ -132,17 +95,13 @@ export const loadTop10CoinData = async function () {
       id: data[2].id,
       symbol: data[2].symbol,
       name: data[2].name,
-      logo: data[2].image.thumb,
-      currUsdPrice: data[2].market_data.current_price.usd,
-      mktCap: data[2].market_data.market_cap.usd,
-      priceChangePercent1h:
-        data[2].market_data.price_change_percentage_1h_in_currency.usd,
-      priceChangePercent24h:
-        data[2].market_data.price_change_percentage_24h_in_currency.usd,
-      priceChangePercent7d:
-        data[2].market_data.price_change_percentage_7d_in_currency.usd,
-      totalVolume24hr: data[2].market_data.total_volume.usd,
-      sparkline: data[2].market_data.sparkline_7d,
+      logo: data[2].image,
+      currUsdPrice: data[2].current_price,
+      mktCap: data[2].market_cap,
+      priceChangePercent1h: data[2].price_change_percentage_1h_in_currency,
+      priceChangePercent24h: data[2].price_change_percentage_24h_in_currency,
+      priceChangePercent7d: data[2].price_change_percentage_7d_in_currency,
+      totalVolume24hr: data[2].total_volume,
       mktCapRank: data[2].market_cap_rank,
     };
 
@@ -152,17 +111,13 @@ export const loadTop10CoinData = async function () {
       id: data[3].id,
       symbol: data[3].symbol,
       name: data[3].name,
-      logo: data[3].image.thumb,
-      currUsdPrice: data[3].market_data.current_price.usd,
-      mktCap: data[3].market_data.market_cap.usd,
-      priceChangePercent1h:
-        data[3].market_data.price_change_percentage_1h_in_currency.usd,
-      priceChangePercent24h:
-        data[3].market_data.price_change_percentage_24h_in_currency.usd,
-      priceChangePercent7d:
-        data[3].market_data.price_change_percentage_7d_in_currency.usd,
-      totalVolume24hr: data[3].market_data.total_volume.usd,
-      sparkline: data[3].market_data.sparkline_7d,
+      logo: data[3].image,
+      currUsdPrice: data[3].current_price,
+      mktCap: data[3].market_cap,
+      priceChangePercent1h: data[3].price_change_percentage_1h_in_currency,
+      priceChangePercent24h: data[3].price_change_percentage_24h_in_currency,
+      priceChangePercent7d: data[3].price_change_percentage_7d_in_currency,
+      totalVolume24hr: data[3].total_volume,
       mktCapRank: data[3].market_cap_rank,
     };
 
@@ -172,17 +127,13 @@ export const loadTop10CoinData = async function () {
       id: data[4].id,
       symbol: data[4].symbol,
       name: data[4].name,
-      logo: data[4].image.thumb,
-      currUsdPrice: data[4].market_data.current_price.usd,
-      mktCap: data[4].market_data.market_cap.usd,
-      priceChangePercent1h:
-        data[4].market_data.price_change_percentage_1h_in_currency.usd,
-      priceChangePercent24h:
-        data[4].market_data.price_change_percentage_24h_in_currency.usd,
-      priceChangePercent7d:
-        data[4].market_data.price_change_percentage_7d_in_currency.usd,
-      totalVolume24hr: data[4].market_data.total_volume.usd,
-      sparkline: data[4].market_data.sparkline_7d,
+      logo: data[4].image,
+      currUsdPrice: data[4].current_price,
+      mktCap: data[4].market_cap,
+      priceChangePercent1h: data[4].price_change_percentage_1h_in_currency,
+      priceChangePercent24h: data[4].price_change_percentage_24h_in_currency,
+      priceChangePercent7d: data[4].price_change_percentage_7d_in_currency,
+      totalVolume24hr: data[4].total_volume,
       mktCapRank: data[4].market_cap_rank,
     };
 
@@ -192,17 +143,13 @@ export const loadTop10CoinData = async function () {
       id: data[5].id,
       symbol: data[5].symbol,
       name: data[5].name,
-      logo: data[5].image.thumb,
-      currUsdPrice: data[5].market_data.current_price.usd,
-      mktCap: data[5].market_data.market_cap.usd,
-      priceChangePercent1h:
-        data[5].market_data.price_change_percentage_1h_in_currency.usd,
-      priceChangePercent24h:
-        data[5].market_data.price_change_percentage_24h_in_currency.usd,
-      priceChangePercent7d:
-        data[5].market_data.price_change_percentage_7d_in_currency.usd,
-      totalVolume24hr: data[5].market_data.total_volume.usd,
-      sparkline: data[5].market_data.sparkline_7d,
+      logo: data[5].image,
+      currUsdPrice: data[5].current_price,
+      mktCap: data[5].market_cap,
+      priceChangePercent1h: data[5].price_change_percentage_1h_in_currency,
+      priceChangePercent24h: data[5].price_change_percentage_24h_in_currency,
+      priceChangePercent7d: data[5].price_change_percentage_7d_in_currency,
+      totalVolume24hr: data[5].total_volume,
       mktCapRank: data[5].market_cap_rank,
     };
 
@@ -212,17 +159,13 @@ export const loadTop10CoinData = async function () {
       id: data[6].id,
       symbol: data[6].symbol,
       name: data[6].name,
-      logo: data[6].image.thumb,
-      currUsdPrice: data[6].market_data.current_price.usd,
-      mktCap: data[6].market_data.market_cap.usd,
-      priceChangePercent1h:
-        data[6].market_data.price_change_percentage_1h_in_currency.usd,
-      priceChangePercent24h:
-        data[6].market_data.price_change_percentage_24h_in_currency.usd,
-      priceChangePercent7d:
-        data[6].market_data.price_change_percentage_7d_in_currency.usd,
-      totalVolume24hr: data[6].market_data.total_volume.usd,
-      sparkline: data[6].market_data.sparkline_7d,
+      logo: data[6].image,
+      currUsdPrice: data[6].current_price,
+      mktCap: data[6].market_cap,
+      priceChangePercent1h: data[6].price_change_percentage_1h_in_currency,
+      priceChangePercent24h: data[6].price_change_percentage_24h_in_currency,
+      priceChangePercent7d: data[6].price_change_percentage_7d_in_currency,
+      totalVolume24hr: data[6].total_volume,
       mktCapRank: data[6].market_cap_rank,
     };
 
@@ -232,17 +175,13 @@ export const loadTop10CoinData = async function () {
       id: data[7].id,
       symbol: data[7].symbol,
       name: data[7].name,
-      logo: data[7].image.thumb,
-      currUsdPrice: data[7].market_data.current_price.usd,
-      mktCap: data[7].market_data.market_cap.usd,
-      priceChangePercent1h:
-        data[7].market_data.price_change_percentage_1h_in_currency.usd,
-      priceChangePercent24h:
-        data[7].market_data.price_change_percentage_24h_in_currency.usd,
-      priceChangePercent7d:
-        data[7].market_data.price_change_percentage_7d_in_currency.usd,
-      totalVolume24hr: data[7].market_data.total_volume.usd,
-      sparkline: data[7].market_data.sparkline_7d,
+      logo: data[7].image,
+      currUsdPrice: data[7].current_price,
+      mktCap: data[7].market_cap,
+      priceChangePercent1h: data[7].price_change_percentage_1h_in_currency,
+      priceChangePercent24h: data[7].price_change_percentage_24h_in_currency,
+      priceChangePercent7d: data[7].price_change_percentage_7d_in_currency,
+      totalVolume24hr: data[7].total_volume,
       mktCapRank: data[7].market_cap_rank,
     };
 
@@ -252,17 +191,13 @@ export const loadTop10CoinData = async function () {
       id: data[8].id,
       symbol: data[8].symbol,
       name: data[8].name,
-      logo: data[8].image.thumb,
-      currUsdPrice: data[8].market_data.current_price.usd,
-      mktCap: data[8].market_data.market_cap.usd,
-      priceChangePercent1h:
-        data[8].market_data.price_change_percentage_1h_in_currency.usd,
-      priceChangePercent24h:
-        data[8].market_data.price_change_percentage_24h_in_currency.usd,
-      priceChangePercent7d:
-        data[8].market_data.price_change_percentage_7d_in_currency.usd,
-      totalVolume24hr: data[8].market_data.total_volume.usd,
-      sparkline: data[8].market_data.sparkline_7d,
+      logo: data[8].image,
+      currUsdPrice: data[8].current_price,
+      mktCap: data[8].market_cap,
+      priceChangePercent1h: data[8].price_change_percentage_1h_in_currency,
+      priceChangePercent24h: data[8].price_change_percentage_24h_in_currency,
+      priceChangePercent7d: data[8].price_change_percentage_7d_in_currency,
+      totalVolume24hr: data[8].total_volume,
       mktCapRank: data[8].market_cap_rank,
     };
 
@@ -272,17 +207,13 @@ export const loadTop10CoinData = async function () {
       id: data[9].id,
       symbol: data[9].symbol,
       name: data[9].name,
-      logo: data[9].image.thumb,
-      currUsdPrice: data[9].market_data.current_price.usd,
-      mktCap: data[9].market_data.market_cap.usd,
-      priceChangePercent1h:
-        data[9].market_data.price_change_percentage_1h_in_currency.usd,
-      priceChangePercent24h:
-        data[9].market_data.price_change_percentage_24h_in_currency.usd,
-      priceChangePercent7d:
-        data[9].market_data.price_change_percentage_7d_in_currency.usd,
-      totalVolume24hr: data[9].market_data.total_volume.usd,
-      sparkline: data[9].market_data.sparkline_7d,
+      logo: data[9].image,
+      currUsdPrice: data[9].current_price,
+      mktCap: data[9].market_cap,
+      priceChangePercent1h: data[9].price_change_percentage_1h_in_currency,
+      priceChangePercent24h: data[9].price_change_percentage_24h_in_currency,
+      priceChangePercent7d: data[9].price_change_percentage_7d_in_currency,
+      totalVolume24hr: data[9].total_volume,
       mktCapRank: data[9].market_cap_rank,
     };
   } catch (err) {

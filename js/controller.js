@@ -3,6 +3,7 @@ import * as model from './model.js';
 ('use strict');
 
 const coinDataContainer = document.querySelector('.coin-data');
+const tableContainer = document.querySelector('.crypto-table');
 
 const formatter = new Intl.NumberFormat('en-US', {
   style: 'currency',
@@ -26,6 +27,7 @@ const renderSpinner = function (parentEl) {
 
 const showCoinData = async function () {
   // Loading coin data
+
   try {
     await model.loadTop10CoinData();
     const btc = model.state.btc;
@@ -290,7 +292,7 @@ ${matic.priceChangePercent1h.toFixed(2)}%</span></td>
 </tr>
 
     `;
-    // coinDataContainer.innerHTML = '';
+    coinDataContainer.innerHTML = '';
     coinDataContainer.insertAdjacentHTML('beforeend', markup);
   } catch (err) {
     alert(err);
