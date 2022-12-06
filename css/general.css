@@ -70,3 +70,7 @@ td {
 .font-bold {
   font-weight: 500;
 }
+
+.btn {
+  padding: 1.5rem 4rem;
+}

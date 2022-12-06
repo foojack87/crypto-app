@@ -15,6 +15,10 @@
   <body>
     <header class="header-container">
       <img src="imgs/birka_logo_light-01.png" alt="logo" class="header--logo">
+      <form class="search">
+        <input type="text" class="search-field" placeholder="Search every coin in the world...">
+        <button class="btn search-btn"><ion-icon class="search-circle-icon" name="search-circle-outline"></ion-icon></ion-icon><span class="search-btn-txt">Search</span></button>
+      </form>
       <nav></nav>
     </header>
     <section class="price-data-section">
@@ -41,9 +45,23 @@
         </table>
       </div>
       <div class="query-results-container">
-        <div class="query-message">
-          <div class="query-icon"><ion-icon name="search-outline"></ion-icon></div>
-            <p>Search for a coin!</p>
+        <!-- <div class="query-message">
+          <div class="query-icon"><ion-icon class="search-icon" name="search-outline"></ion-icon></div>
+            <p>Search for a coin!</p> -->
+<li class="preview">
+    <a class="preview-link" href="#">
+      <figure class="preview-fig">
+        <img src="imgs/bitcoin_PNG48.webp" alt="coin logo" />
+      </figure>
+      <div class="preview-data">
+        <h4 class="preview-coin-name">bitcoin</h4>
+        <p class="preview-coin-symbol">BTC</p>
+        <p class="preview-coin-mktCapRank"><span class="mktCapRank-title">Mkt Cap Rank</span><span class="rank-number">#1</span></p>
+        <p class="preview-coin-mktCap"><span class="mktCapRank-title">Mkt Cap</span> <span class="mktCap-amount">$327,237,941,276</span></p>
+      </div>
+    </a>
+  </li>
+
         </div>
       </div>
     </section>

@@ -13,6 +13,29 @@
   background-color: rgba(255, 255, 255, 0.753) !important;
   margin-top: 4rem;
   border-radius: 9px 9px 0px 0px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search {
+  background-color: #fff;
+  border-radius: 10rem;
+  align-items: center;
+  padding-left: 3rem;
+  display: flex;
+}
+
+.search-field {
+  color: inherit;
+  width: 30rem;
+  background: 0 0;
+  border: none;
+  font-family: inherit;
+  font-size: 1.8rem;
+}
+
+.search-field:focus {
+  outline: none;
 }
 
 .header--logo {
@@ -21,7 +44,7 @@
 
 .table-container {
   background-color: rgba(255, 255, 255, 0.753) !important;
-  border-radius: 0px 0px 9px 9px;
+  border-radius: 0px 0px 0px 9px;
   padding: 1.5rem;
   box-shadow: 0 2rem 6rem 0.5rem #61555133;
 }
@@ -69,4 +92,119 @@
   100% {
     transform: rotate(360deg);
   }
+}
+
+.query-results-container {
+  background-color: rgba(255, 255, 255, 0.753) !important;
+  border-radius: 0px 0px 9px 0px;
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+}
+
+.query-message {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  max-width: 40rem;
+  padding: 5rem 4rem;
+}
+
+.search-icon {
+  width: 4rem;
+  height: 4rem;
+  color: #3b5bdbaf;
+  margin-right: 0.8rem;
+}
+
+.query-message p {
+  font-size: 2.4rem;
+}
+
+.search-circle-icon {
+  margin-right: 1rem;
+  height: 3.2rem;
+  width: 3.2rem;
+  fill: currentColor;
+}
+
+.search-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10rem;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  background-image: linear-gradient(to bottom right, #d0bfff, #3b5bdb);
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1.8rem;
+  transition: all 0.3s;
+}
+
+.search-btn:hover {
+  transform: scale(1.05);
+}
+
+.preview {
+  list-style: none;
+}
+
+.preview-link {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preview-link:hover {
+  background-color: #bac8ff;
+  border-radius: 10rem;
+  transition: all 0.3s;
+}
+
+.preview-coin-name {
+  text-transform: uppercase;
+  color: #212529;
+}
+
+.preview-coin-symbol {
+  font-size: 1.2rem;
+  align-self: center;
+}
+
+.preview-data {
+  display: flex;
+  gap: 2.8rem;
+  padding: 1rem;
+  font-size: 1.8rem;
+  align-items: center;
+  color: #4a4a4a;
+}
+
+.preview-fig img {
+  width: 4.8rem;
+  height: 4.8rem;
+}
+
+.preview-coin-mktCapRank {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.mktCapRank-title {
+  font-size: 1.2rem;
+  text-decoration: underline;
+}
+
+.preview-coin-mktCap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
 }
