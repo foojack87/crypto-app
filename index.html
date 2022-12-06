@@ -13,6 +13,10 @@
     <title>crypto app</title>
   </head>
   <body>
+    <header class="header-container">
+      <img src="imgs/birka_logo_light-01.png" alt="logo" class="header--logo">
+      <nav></nav>
+    </header>
     <section class="price-data-section">
       <div class="table-container">
         <table class="crypto-table ">
@@ -22,12 +26,11 @@
                   #</th>
                   <th class="coin-name">Coin</th>
                   <th class="price third-col">Price</th>
-                  <th class="price-change-hour">1h</th>
-                  <th class="price-change-24hr">24h</th>
-                  <th class="price-change-7d">7d</th>
+                  <th class="price-change-hour price-change">1h</th>
+                  <th class="price-change-24hr price-change">24h</th>
+                  <th class="price-change-7d price-change">7d</th>
                   <th>24h Volume</th>
                   <th>Mkt Cap</th>
-                  <th>Last 7 Days</th>
                 </tr>
               </th>
             </tr>
@@ -36,6 +39,12 @@
         
           </tbody>
         </table>
+      </div>
+      <div class="query-results-container">
+        <div class="query-message">
+          <div class="query-icon"><ion-icon name="search-outline"></ion-icon></div>
+            <p>Search for a coin!</p>
+        </div>
       </div>
     </section>
     <footer><p>Data provided by CoinGecko</p></footer>
