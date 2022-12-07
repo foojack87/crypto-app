@@ -40,6 +40,9 @@ class TopCoinsView extends Views {
     <td class="mkt-cap center-text">${formatter.format(coins.mktCap)}</td>
   </tr>`;
   }
+  addHandlerRender(handler) {
+    window.addEventListener('load', handler);
+  }
 }
 
 export default new TopCoinsView();

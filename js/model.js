@@ -1,6 +1,8 @@
 export const state = {
   coins: {
     topCoins: '',
+  },
+  search: {
     query: '',
     results: [],
   },
@@ -36,4 +38,27 @@ export const loadTop10CoinData = async function () {
   }
 };
 
-loadTop10CoinData();
+export const loadSearchResults = async function (query) {
+  try {
+    const res =
+      await fetch(`https://api.coingecko.com/api/v3/search?query=${query}
+    `);
+
+    const data = await res.json();
+    console.log(data.coins);
+
+    if (!res.ok) throw new Error(`${data.error} ${res.status}`);
+    state.search.results = data.coins.map(results => {
+      return {
+        id: results.id,
+        name: results.name,
+        mktCapRank: results.market_cap_rank,
+        logo: results.large,
+        symbol: results.symbol,
+      };
+    });
+    console.log(state.search.results);
+  } catch (err) {
+    alert(err);
+  }
+};

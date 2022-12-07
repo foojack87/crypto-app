@@ -19,7 +19,11 @@
         <input type="text" class="search-field" placeholder="Search every coin in the world...">
         <button class="btn search-btn"><ion-icon class="search-circle-icon" name="search-circle-outline"></ion-icon></ion-icon><span class="search-btn-txt">Search</span></button>
       </form>
-      <nav></nav>
+        <nav class="nav-container">
+
+              <button class="nav-btn nav-btn-favorites"><ion-icon class="favorites-icon" name="star-outline"></ion-icon><span class="fav-text">bookmark</span></button>
+
+        </nav>
     </header>
     <section class="price-data-section">
       <div class="table-container">
@@ -45,23 +49,10 @@
         </table>
       </div>
       <div class="query-results-container">
-        <!-- <div class="query-message">
-          <div class="query-icon"><ion-icon class="search-icon" name="search-outline"></ion-icon></div>
-            <p>Search for a coin!</p> -->
-<li class="preview">
-    <a class="preview-link" href="#">
-      <figure class="preview-fig">
-        <img src="imgs/bitcoin_PNG48.webp" alt="coin logo" />
-      </figure>
-      <div class="preview-data">
-        <h4 class="preview-coin-name">bitcoin</h4>
-        <p class="preview-coin-symbol">BTC</p>
-        <p class="preview-coin-mktCapRank"><span class="mktCapRank-title">Mkt Cap Rank</span><span class="rank-number">#1</span></p>
-        <p class="preview-coin-mktCap"><span class="mktCapRank-title">Mkt Cap</span> <span class="mktCap-amount">$327,237,941,276</span></p>
-      </div>
-    </a>
-  </li>
-
+        <div class="query-message">
+          <ion-icon class="search-icon" name="search-outline"></ion-icon>
+          <p class="query-message-text">Search for a coin!</p>
+        </div>
         </div>
       </div>
     </section>

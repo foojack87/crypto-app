@@ -1,5 +1,7 @@
 import * as model from './model.js';
 import topCoinsView from './views/topCoinsView.js';
+import searchPreviewView from './views/searchPreviewView.js';
+import searchView from './views/searchView.js';
 
 const controlTopCoins = async function () {
   try {
@@ -14,5 +16,26 @@ const controlTopCoins = async function () {
     console.log(err);
   }
 };
+const controlCoinSearchPreview = async function () {
+  try {
+    const query = searchView.getQuery();
 
-controlTopCoins();
+    if (!query) return;
+    searchPreviewView.renderSpinner();
+    await model.loadSearchResults(query);
+
+    console.log(model.state.search.results);
+    searchPreviewView.render(model.state.search.results);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+controlCoinSearchPreview();
+
+const init = function () {
+  searchView.addHandlerSearch(controlCoinSearchPreview);
+  topCoinsView.addHandlerRender(controlTopCoins);
+};
+
+init();
