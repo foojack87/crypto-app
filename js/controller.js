@@ -31,8 +31,6 @@ const controlCoinSearchPreview = async function () {
   }
 };
 
-controlCoinSearchPreview();
-
 const init = function () {
   searchView.addHandlerSearch(controlCoinSearchPreview);
   topCoinsView.addHandlerRender(controlTopCoins);

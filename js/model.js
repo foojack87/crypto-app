@@ -1,11 +1,10 @@
 export const state = {
-  coins: {
-    topCoins: '',
-  },
+  coins: {},
   search: {
     query: '',
     results: [],
   },
+  coinData: {},
 };
 
 export const loadTop10CoinData = async function () {
@@ -62,3 +61,42 @@ export const loadSearchResults = async function (query) {
     alert(err);
   }
 };
+
+export const loadCoinDetails = async function (id) {
+  try {
+    const res = await fetch(`https://api.coingecko.com/api/v3/coins/${id}
+    `);
+
+    const data = await res.json();
+    if (!res.ok) throw new Error(`${data.error} ${res.status}`);
+    const coinData = data;
+    console.log(data);
+
+    state.coinData = {
+      id: coinData.id,
+      name: coinData.name,
+      mktCapRank: coinData.market_cap_rank,
+      desc: coinData.description.en,
+      logo: coinData.image.large,
+      homepage: coinData.links.homepage[0],
+      ath: coinData.market_data.ath.usd,
+      atl: coinData.market_data.atl.usd,
+      circulatingSupply: coinData.market_data.circulating_supply,
+      currPrice: coinData.market_data.current_price.usd,
+      fullyDilutedVal: coinData.market_data.fully_diluted_valuation.usd,
+      dateCreated: coinData.genesis_date,
+      mktCap: coinData.market_data.market_cap.usd,
+      maxSupply: coinData.market_data.max_supply,
+      totalSupply: coinData.market_data.total_supply,
+      priceChangePercent24h:
+        coinData.market_data.price_change_percentage_24h_in_currency.usd,
+      totalVolume: coinData.market_data.total_volume,
+    };
+  } catch (err) {
+    alert(err);
+  }
+
+  console.log(state.coinData);
+};
+
+loadCoinDetails('bitcoin');
