@@ -1,0 +1,22 @@
+{
+  "name": "cryptofi-app",
+  "version": "1.0.0",
+  "description": "crypto info application",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/foojack87/crypto-app.git"
+  },
+  "author": "Jackie Foo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/foojack87/crypto-app/issues"
+  },
+  "homepage": "https://github.com/foojack87/crypto-app#readme",
+  "devDependencies": {
+    "parcel": "^2.8.1"
+  }
+}
