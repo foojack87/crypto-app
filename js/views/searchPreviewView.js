@@ -12,7 +12,7 @@ class SearchPreviewView extends Views {
   _generateMarkupPreviewResults(results) {
     return `
     <li class="preview">
-    <a class="preview-link" href="#bitcoin">
+    <a class="preview-link" href="#${results.id}">
       <figure class="preview-fig">
         <img src="${results.logo}" alt="coin logo" />
       </figure>

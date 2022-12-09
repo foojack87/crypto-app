@@ -75,6 +75,7 @@ export const loadCoinDetails = async function (id) {
     state.coinData = {
       id: coinData.id,
       name: coinData.name,
+      symbol: coinData.symbol,
       mktCapRank: coinData.market_cap_rank,
       desc: coinData.description.en,
       logo: coinData.image.large,
@@ -90,7 +91,7 @@ export const loadCoinDetails = async function (id) {
       totalSupply: coinData.market_data.total_supply,
       priceChangePercent24h:
         coinData.market_data.price_change_percentage_24h_in_currency.usd,
-      totalVolume: coinData.market_data.total_volume,
+      totalVolume: coinData.market_data.total_volume.usd,
     };
   } catch (err) {
     alert(err);
@@ -98,5 +99,3 @@ export const loadCoinDetails = async function (id) {
 
   console.log(state.coinData);
 };
-
-loadCoinDetails('bitcoin');

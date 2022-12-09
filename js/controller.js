@@ -2,6 +2,7 @@ import * as model from './model.js';
 import topCoinsView from './views/topCoinsView.js';
 import searchPreviewView from './views/searchPreviewView.js';
 import searchView from './views/searchView.js';
+import coinDetailsView from './views/coinDetailsView.js';
 
 const controlTopCoins = async function () {
   try {
@@ -31,9 +32,25 @@ const controlCoinSearchPreview = async function () {
   }
 };
 
+const controlCoinDetails = async function () {
+  try {
+    const id = window.location.hash.slice(1);
+    if (!id) return;
+
+    coinDetailsView.renderSpinner();
+    await model.loadCoinDetails(id);
+
+    console.log(model.state.coinData);
+    coinDetailsView.render(model.state.coinData);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
 const init = function () {
   searchView.addHandlerSearch(controlCoinSearchPreview);
   topCoinsView.addHandlerRender(controlTopCoins);
+  coinDetailsView.addHandlerRender(controlCoinDetails);
 };
 
 init();

@@ -19,6 +19,7 @@ export default class View {
   }
 
   renderSpinner() {
+    this._clear();
     const markup = `<div class="spinner">
     <ion-icon class="spinner--icon" name="refresh-outline"></ion-icon>
     </div>`;
