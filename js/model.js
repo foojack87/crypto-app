@@ -5,6 +5,7 @@ export const state = {
     results: [],
   },
   coinData: {},
+  bookmarked: [],
 };
 
 export const loadTop10CoinData = async function () {
@@ -93,9 +94,25 @@ export const loadCoinDetails = async function (id) {
         coinData.market_data.price_change_percentage_24h_in_currency.usd,
       totalVolume: coinData.market_data.total_volume.usd,
     };
+
+    if (state.bookmarked.some(bookmark => bookmark.id === id))
+      state.coinData.bookmarked = true;
+    else state.coinData.bookmarked = false;
   } catch (err) {
     alert(err);
+    throw err;
   }
+};
 
-  console.log(state.coinData);
+export const addBookmark = function (coinData) {
+  state.bookmarked.push(coinData);
+
+  if (coinData.id === state.coinData.id) state.coinData.bookmarked = true;
+};
+
+export const removeBookmark = function (id) {
+  const index = state.bookmarked.findIndex(el => el.id === id);
+  state.bookmarked.splice(index, 1);
+
+  if (id === state.coinData.id) state.coinData.bookmarked = false;
 };

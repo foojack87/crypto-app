@@ -2,11 +2,26 @@ import Views from './Views.js';
 
 class SearchPreviewView extends Views {
   _parentElement = document.querySelector('.query-results-container');
+  _errorMessage = 'Cannot find related coin, please try again 😥';
 
   _generateMarkup() {
     console.log(this._data);
 
     return this._data.map(this._generateMarkupPreviewResults).join('');
+  }
+
+  renderError(message = this._errorMessage) {
+    const markup = `
+    <div class="error">
+    <div><svg class="error-message-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+  </svg>  
+  </div>
+  <p>${message}</p>
+    </div>`;
+
+    this._clear();
+    this._parentElement.insertAdjacentHTML('afterbegin', markup);
   }
 
   _generateMarkupPreviewResults(results) {

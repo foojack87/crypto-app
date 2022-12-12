@@ -29,6 +29,7 @@ const controlCoinSearchPreview = async function () {
     searchPreviewView.render(model.state.search.results);
   } catch (err) {
     console.log(err);
+    coinDetailsView.renderError();
   }
 };
 
@@ -47,10 +48,19 @@ const controlCoinDetails = async function () {
   }
 };
 
+const controlBookmarking = function () {
+  if (!model.state.coinData.bookmarked) model.addBookmark(model.state.coinData);
+  else model.removeBookmark(model.state.coinData.id);
+
+  console.log(model.state.coinData);
+  coinDetailsView.update(model.state.coinData);
+};
+
 const init = function () {
   searchView.addHandlerSearch(controlCoinSearchPreview);
   topCoinsView.addHandlerRender(controlTopCoins);
   coinDetailsView.addHandlerRender(controlCoinDetails);
+  coinDetailsView.addHandlerAddBookmark(controlBookmarking);
 };
 
 init();

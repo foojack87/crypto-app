@@ -73,6 +73,9 @@ td {
 
 .btn {
   padding: 1.5rem 4rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 }
 
 .grid-2-cols {

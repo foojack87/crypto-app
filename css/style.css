@@ -38,6 +38,94 @@
   outline: none;
 }
 
+.bookmarks {
+  z-index: 999;
+  width: 40rem;
+  visibility: hidden;
+  opacity: 0;
+  background-color: #fff;
+  padding: 2rem 0;
+  transition: all 0.5s 0.2s;
+  position: absolute;
+  right: 23rem;
+  box-shadow: 0 0.8rem 5rem 2rem #61555133;
+}
+
+.bookmarks-list {
+  list-style: none;
+}
+
+.modal-state {
+  display: none;
+}
+
+.modal__bg {
+  position: absolute;
+  right: 23rem;
+  cursor: pointer;
+}
+
+.modal-state:checked + .bookmarks {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-state:checked + .bookmarks .modal__inner {
+  top: 0;
+}
+
+/* .modal__inner {
+  transition: top 0.25s ease;
+  position: absolute;
+  margin: auto;
+  overflow: auto;
+  background: #333;
+  border-radius: 5px;
+  padding: 1em 2em;
+  height: 50%;
+  right: 0;
+  opacity: 0;
+} */
+
+.modal__close {
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  width: 1.1em;
+  height: 1.1em;
+  cursor: pointer;
+}
+
+.modal__close:after,
+.modal__close:before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 1.5em;
+  background: #ccc;
+  display: block;
+  transform: rotate(45deg);
+  left: 50%;
+  margin: -3px 0 0 -1px;
+  top: 0;
+}
+
+.modal__close:hover:after,
+.modal__close:hover:before {
+  background: #aaa;
+}
+
+.modal__close:before {
+  transform: rotate(-45deg);
+}
+
+.bookmark-message {
+  display: flex;
+  justify-content: center;
+  padding: 5rem;
+  font-size: 2rem;
+}
+
 .header--logo {
   width: 18rem;
 }
@@ -126,7 +214,7 @@
   margin-right: 1rem;
   height: 3.2rem;
   width: 3.2rem;
-  fill: currentColor;
+  color: #fff;
 }
 
 .search-btn {
@@ -222,6 +310,14 @@
   height: 2.4rem;
   margin-right: 1.4rem;
   color: #3b5bdb;
+}
+
+.favorites-icon-bookmarked {
+  width: 2.4rem;
+  height: 2.4rem;
+  margin-right: 1.4rem;
+  color: #3b5bdb;
+  fill: #3b5bdb;
 }
 
 .nav-btn {
@@ -351,6 +447,7 @@
   background-color: #bac8ff;
   padding: 1rem;
   border-radius: 6px;
+  font-size: 1.4rem;
 }
 
 .homepage-link:hover {
@@ -363,4 +460,28 @@
   font-size: 1.6rem;
   letter-spacing: 0.3px;
   line-height: 2rem;
+}
+
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.6rem;
+  font-size: 2rem;
+  color: rgba(255, 30, 30, 0.555);
+}
+
+.error-message-icon {
+  height: 4.8rem;
+  width: 4.8rem;
+}
+
+/* .preview-figure {
+  height: 2.4rem;
+  width: 2.4rem;
+} */
+
+.preview-figure img {
+  height: 3.6rem;
+  width: 3.6rem;
 }

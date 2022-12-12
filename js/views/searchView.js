@@ -13,6 +13,7 @@ class SearchView {
 
   addHandlerSearch(handler) {
     this._parentElement.addEventListener('submit', function (e) {
+      window.location.hash = '';
       e.preventDefault();
       handler();
     });
