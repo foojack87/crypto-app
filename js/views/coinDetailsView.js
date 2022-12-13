@@ -18,8 +18,6 @@ class CoinDetailsView extends Views {
   }
 
   _generateMarkup() {
-    console.log(this._data);
-
     return `
     <div class="grid-2-rows">
           

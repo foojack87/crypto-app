@@ -45,7 +45,6 @@ export const loadSearchResults = async function (query) {
     `);
 
     const data = await res.json();
-    console.log(data.coins);
 
     if (!res.ok) throw new Error(`${data.error} ${res.status}`);
     state.search.results = data.coins.map(results => {
@@ -57,7 +56,6 @@ export const loadSearchResults = async function (query) {
         symbol: results.symbol,
       };
     });
-    console.log(state.search.results);
   } catch (err) {
     alert(err);
   }
@@ -71,7 +69,6 @@ export const loadCoinDetails = async function (id) {
     const data = await res.json();
     if (!res.ok) throw new Error(`${data.error} ${res.status}`);
     const coinData = data;
-    console.log(data);
 
     state.coinData = {
       id: coinData.id,
@@ -104,10 +101,16 @@ export const loadCoinDetails = async function (id) {
   }
 };
 
+const persistBookmarks = function () {
+  localStorage.setItem('bookmarks', JSON.stringify(state.bookmarked));
+};
+
 export const addBookmark = function (coinData) {
   state.bookmarked.push(coinData);
 
   if (coinData.id === state.coinData.id) state.coinData.bookmarked = true;
+
+  persistBookmarks();
 };
 
 export const removeBookmark = function (id) {
@@ -115,4 +118,16 @@ export const removeBookmark = function (id) {
   state.bookmarked.splice(index, 1);
 
   if (id === state.coinData.id) state.coinData.bookmarked = false;
+  persistBookmarks();
+};
+
+const init = function () {
+  const storage = localStorage.getItem('bookmarks');
+  if (storage) state.bookmarked = JSON.parse(storage);
+};
+
+init();
+
+const clearBookmarks = function () {
+  localStorage.clear('bookmarks');
 };

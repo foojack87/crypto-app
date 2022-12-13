@@ -2,6 +2,7 @@ import * as model from './model.js';
 import topCoinsView from './views/topCoinsView.js';
 import searchPreviewView from './views/searchPreviewView.js';
 import searchView from './views/searchView.js';
+import bookmarksView from './views/bookmarksView.js';
 import coinDetailsView from './views/coinDetailsView.js';
 
 const controlTopCoins = async function () {
@@ -11,7 +12,6 @@ const controlTopCoins = async function () {
     await model.loadTop10CoinData();
 
     // render results
-    console.log(model.state.coins.topCoins);
     topCoinsView.render(model.state.coins.topCoins);
   } catch (err) {
     console.log(err);
@@ -25,7 +25,6 @@ const controlCoinSearchPreview = async function () {
     searchPreviewView.renderSpinner();
     await model.loadSearchResults(query);
 
-    console.log(model.state.search.results);
     searchPreviewView.render(model.state.search.results);
   } catch (err) {
     console.log(err);
@@ -41,7 +40,6 @@ const controlCoinDetails = async function () {
     coinDetailsView.renderSpinner();
     await model.loadCoinDetails(id);
 
-    console.log(model.state.coinData);
     coinDetailsView.render(model.state.coinData);
   } catch (err) {
     console.log(err);
@@ -52,11 +50,17 @@ const controlBookmarking = function () {
   if (!model.state.coinData.bookmarked) model.addBookmark(model.state.coinData);
   else model.removeBookmark(model.state.coinData.id);
 
-  console.log(model.state.coinData);
   coinDetailsView.update(model.state.coinData);
+
+  bookmarksView.render(model.state.bookmarked);
+};
+
+const controlBookmarkReload = function () {
+  bookmarksView.render(model.state.bookmarked);
 };
 
 const init = function () {
+  bookmarksView.addHandlerRender(controlBookmarkReload);
   searchView.addHandlerSearch(controlCoinSearchPreview);
   topCoinsView.addHandlerRender(controlTopCoins);
   coinDetailsView.addHandlerRender(controlCoinDetails);

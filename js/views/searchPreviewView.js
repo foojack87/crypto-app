@@ -5,8 +5,6 @@ class SearchPreviewView extends Views {
   _errorMessage = 'Cannot find related coin, please try again 😥';
 
   _generateMarkup() {
-    console.log(this._data);
-
     return this._data.map(this._generateMarkupPreviewResults).join('');
   }
 

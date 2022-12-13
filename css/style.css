@@ -485,3 +485,50 @@
   height: 3.6rem;
   width: 3.6rem;
 }
+
+.bookmarks-preview {
+  display: flex;
+}
+
+.preview-link-bookmarks {
+  display: flex;
+  text-decoration: none;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 1.4rem;
+  padding: 0 1rem;
+  margin: 0.8rem;
+}
+
+.bookmarks-preview:hover {
+  background-color: #bac8ff;
+  transition: 0.3s all;
+}
+
+.bookmark-coin-name {
+  text-transform: uppercase;
+  color: #212529;
+  font-size: 1.2rem;
+}
+
+.bookmark-coin-currprice {
+  font-size: 1.8rem;
+  color: #4a4a4a;
+}
+
+.bookmark-price-change-percentage {
+  font-size: 1.6rem;
+}
+
+.bookmark-coin-basics {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.bookmark-coin-details {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
