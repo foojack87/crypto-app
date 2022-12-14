@@ -28,4 +28,8 @@
   .search-field {
     width: 26rem;
   }
+
+  .bookmarks {
+    left: 150%;
+  }
 }
