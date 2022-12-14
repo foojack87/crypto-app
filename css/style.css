@@ -1,10 +1,4 @@
-.price-data-section {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  width: 144rem;
-  margin: 0 auto;
-  box-shadow: 0 2rem 6rem 0.5rem #61555133;
-}
+/*** Nav Header ***/
 
 .header-container {
   display: flex;
@@ -17,12 +11,23 @@
   justify-content: space-between;
 }
 
+.nav-container {
+  align-self: stretch;
+}
+
 .search {
   background-color: #fff;
   border-radius: 10rem;
   align-items: center;
   padding-left: 3rem;
   display: flex;
+}
+
+.search-circle-icon {
+  margin-right: 1rem;
+  height: 3.2rem;
+  width: 3.2rem;
+  color: #fff;
 }
 
 .search-field {
@@ -38,6 +43,25 @@
   outline: none;
 }
 
+.search-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10rem;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  background-image: linear-gradient(to bottom right, #d0bfff, #3b5bdb);
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1.8rem;
+  transition: all 0.3s;
+}
+
+.search-btn:hover {
+  transform: scale(1.05);
+}
+
 .bookmarks {
   z-index: 999;
   width: 40rem;
@@ -49,6 +73,26 @@
   position: absolute;
   right: 23rem;
   box-shadow: 0 0.8rem 5rem 2rem #61555133;
+}
+
+.nav-btn {
+  height: 100%;
+  color: inherit;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  background: 0 0;
+  align-items: center;
+  padding: 0 1.5rem;
+  margin-right: 4rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  display: flex;
+  transition: all 0.3s;
+}
+
+.nav-btn:hover {
+  background-color: #bac8ff;
 }
 
 .bookmarks-list {
@@ -73,19 +117,6 @@
 .modal-state:checked + .bookmarks .modal__inner {
   top: 0;
 }
-
-/* .modal__inner {
-  transition: top 0.25s ease;
-  position: absolute;
-  margin: auto;
-  overflow: auto;
-  background: #333;
-  border-radius: 5px;
-  padding: 1em 2em;
-  height: 50%;
-  right: 0;
-  opacity: 0;
-} */
 
 .modal__close {
   position: absolute;
@@ -130,11 +161,31 @@
   width: 18rem;
 }
 
+/*** Top Coins ***/
+
+.price-data-section {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  width: 144rem;
+  margin: 0 auto;
+  box-shadow: 0 2rem 6rem 0.5rem #61555133;
+}
+
 .table-container {
   background-color: rgba(255, 255, 255, 0.753) !important;
   border-radius: 0px 0px 0px 9px;
   padding: 1.5rem;
   box-shadow: 0 2rem 6rem 0.5rem #61555133;
+}
+
+.top-coins-link {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  color: #4a4a4a;
+  font-weight: 600;
 }
 
 .crypto-table {
@@ -159,28 +210,7 @@
   text-align: end;
 }
 
-.spinner {
-  margin: 0 auto;
-}
-
-.spinner--icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 6rem;
-  width: 6rem;
-  color: #4a4a4a;
-  animation: rotate 2s infinite linear;
-}
-
-@keyframes rotate {
-  0% {
-    transform: rotate(0);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
+/*** Detailed Coin & Search preview ***/
 
 .query-results-container {
   background-color: rgba(255, 255, 255, 0.753) !important;
@@ -208,32 +238,6 @@
 
 .query-message p {
   font-size: 2.4rem;
-}
-
-.search-circle-icon {
-  margin-right: 1rem;
-  height: 3.2rem;
-  width: 3.2rem;
-  color: #fff;
-}
-
-.search-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 10rem;
-  border: none;
-  cursor: pointer;
-  color: #fff;
-  background-image: linear-gradient(to bottom right, #d0bfff, #3b5bdb);
-  text-transform: uppercase;
-  font-weight: 600;
-  font-size: 1.8rem;
-  transition: all 0.3s;
-}
-
-.search-btn:hover {
-  transform: scale(1.05);
 }
 
 .preview {
@@ -301,10 +305,6 @@
   gap: 0.4rem;
 }
 
-.nav-container {
-  align-self: stretch;
-}
-
 .favorites-icon {
   width: 2.4rem;
   height: 2.4rem;
@@ -318,26 +318,6 @@
   margin-right: 1.4rem;
   color: #3b5bdb;
   fill: #3b5bdb;
-}
-
-.nav-btn {
-  height: 100%;
-  color: inherit;
-  text-transform: uppercase;
-  cursor: pointer;
-  border: none;
-  background: 0 0;
-  align-items: center;
-  padding: 0 1.5rem;
-  margin-right: 4rem;
-  font-size: 1.8rem;
-  font-weight: 600;
-  display: flex;
-  transition: all 0.3s;
-}
-
-.nav-btn:hover {
-  background-color: #bac8ff;
 }
 
 .market-details {
@@ -462,24 +442,7 @@
   line-height: 2rem;
 }
 
-.error {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.6rem;
-  font-size: 2rem;
-  color: rgba(255, 30, 30, 0.555);
-}
-
-.error-message-icon {
-  height: 4.8rem;
-  width: 4.8rem;
-}
-
-/* .preview-figure {
-  height: 2.4rem;
-  width: 2.4rem;
-} */
+/*** bookmarked previews ***/
 
 .preview-figure img {
   height: 3.6rem;

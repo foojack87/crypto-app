@@ -1,3 +1,6 @@
+import { API_URL } from './config';
+import { AJAX } from './helpers';
+
 export const state = {
   coins: {},
   search: {
@@ -10,13 +13,9 @@ export const state = {
 
 export const loadTop10CoinData = async function () {
   try {
-    const res =
-      await fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&price_change_percentage=1h%2C24h%2C7d
-  `);
-
-    const data = await res.json();
-
-    if (!res.ok) throw new Error(`${data.error} ${res.status}`);
+    const data =
+      await AJAX(`${API_URL}coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&price_change_percentage=1h%2C24h%2C7d
+    `);
 
     state.coins.topCoins = data.map(coins => {
       return {
@@ -40,13 +39,9 @@ export const loadTop10CoinData = async function () {
 
 export const loadSearchResults = async function (query) {
   try {
-    const res =
-      await fetch(`https://api.coingecko.com/api/v3/search?query=${query}
+    const data = await AJAX(`${API_URL}search?query=${query}
     `);
 
-    const data = await res.json();
-
-    if (!res.ok) throw new Error(`${data.error} ${res.status}`);
     state.search.results = data.coins.map(results => {
       return {
         id: results.id,
@@ -63,11 +58,9 @@ export const loadSearchResults = async function (query) {
 
 export const loadCoinDetails = async function (id) {
   try {
-    const res = await fetch(`https://api.coingecko.com/api/v3/coins/${id}
+    const data = await AJAX(`${API_URL}coins/${id}
     `);
 
-    const data = await res.json();
-    if (!res.ok) throw new Error(`${data.error} ${res.status}`);
     const coinData = data;
 
     state.coinData = {

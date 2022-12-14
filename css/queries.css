@@ -24,4 +24,8 @@
     width: 100%;
     background-color: none;
   }
+
+  .search-field {
+    width: 26rem;
+  }
 }

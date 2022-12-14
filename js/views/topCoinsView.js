@@ -6,21 +6,23 @@ class TopCoinsView extends Views {
   _parentElement = document.querySelector('.coin-data');
 
   _generateMarkup() {
-    console.log(this._data);
-
     return this._data.map(this._generateMarkupTopCoins).join('');
   }
 
   _generateMarkupTopCoins(coins) {
     return `
+
+    
     <tr class="border-top top-coin-data">
   
     <td class="first-col coin-number center-text ">${coins.mktCapRank}</td>
-    <td class="second-col coin-name center-text"><img src="${
-      coins.logo
-    }" class="coin-logos"><span class="font-bold">${
+
+    <td class="second-col coin-name center-text"><a class="top-coins-link" href="#${
+      coins.id
+    }"><img src="${coins.logo}" class="coin-logos"><span class="font-bold">${
       coins.name
-    }</span><span class="coin-symbol">${coins.symbol.toUpperCase()}</span></td>
+    }</span><span class="coin-symbol">${coins.symbol.toUpperCase()}</span></a></td>
+
     <td class="coin-price center-text">${formatterPrice.format(
       coins.currUsdPrice
     )}</td>
@@ -38,7 +40,8 @@ class TopCoinsView extends Views {
       coins.totalVolume24hr
     )}</td>
     <td class="mkt-cap center-text">${formatter.format(coins.mktCap)}</td>
-  </tr>`;
+  </tr>
+  `;
   }
   addHandlerRender(handler) {
     window.addEventListener('load', handler);
