@@ -24,17 +24,17 @@ class TopCoinsView extends Views {
     <td class="coin-price center-text">${formatterPrice.format(
       coins.currUsdPrice
     )}</td>
-    <td class="1hr-change center-text"><span class="${
+    <td class="price-1hr-change center-text"><span class="${
       coins.priceChangePercent1h > 0 ? 'text-positive' : 'text-negative'
     }">
     ${coins.priceChangePercent1h.toFixed(2)}%</span></td>
-    <td class="24hr-change center-text"><span class="${
+    <td class="price-24hr-change center-text"><span class="${
       coins.priceChangePercent24h > 0 ? 'text-positive' : 'text-negative'
     }">${coins.priceChangePercent24h.toFixed(2)}%</span></td>
-    <td class="7d-change center-text"><span class="${
+    <td class="price-7d-change center-text"><span class="${
       coins.priceChangePercent7d > 0 ? 'text-positive' : 'text-negative'
     }">${coins.priceChangePercent7d.toFixed(2)}%</span></td>
-    <td class="24hr-vol center-text">${formatter.format(
+    <td class="price-24hr-vol center-text">${formatter.format(
       coins.totalVolume24hr
     )}</td>
     <td class="mkt-cap center-text">${formatter.format(coins.mktCap)}</td>

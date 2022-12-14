@@ -1,0 +1,27 @@
+/****************************/
+/* BELOW 1200px (Smaller desktops) 75em breakpoint */
+/****************************/
+
+@media (max-width: 75em) {
+  body {
+    background-image: none;
+    background-color: #bac8ff;
+  }
+  tr th:nth-child(8),
+  tr td:nth-child(8) {
+    display: none;
+  }
+  tr th:nth-child(7),
+  tr td:nth-child(7) {
+    display: none;
+  }
+
+  .price-data-section {
+    width: 100%;
+  }
+
+  .header-container {
+    width: 100%;
+    background-color: none;
+  }
+}

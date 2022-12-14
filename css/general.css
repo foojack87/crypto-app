@@ -5,6 +5,7 @@
 }
 
 body {
+  min-width: fit-content;
   font-family: sans-serif;
   line-height: 1;
   font-weight: 400;
