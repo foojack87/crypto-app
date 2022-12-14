@@ -32,6 +32,8 @@ export const loadTop10CoinData = async function () {
         mktCapRank: coins.market_cap_rank,
       };
     });
+
+    console.log(state.coins);
   } catch (err) {
     alert(err);
   }
